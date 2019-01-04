@@ -33,8 +33,32 @@
         },
     ];
 
-    var boxes = document.querySelectorAll(".box");
+    var boxes;
     var startButton = document.getElementById("start");
+    var nextButton = document.getElementById("next");
+
+    var prepareBox = function() {
+        var placeToInsert = document.querySelector(".results");
+        var element = document.createElement("div");
+        var header = document.createElement("header");
+        var paragraph = document.createElement("p");
+        header.innerText = "Empty";
+        paragraph.innerText = "No data";
+        element.appendChild(header);
+        element.appendChild(paragraph);
+        element.classList.add("box");
+        placeToInsert.appendChild(element);
+    }
+
+    var prepareStructure = function() {
+        var counter = Object.keys(data).length;
+        for (var i = 0; i < counter; i++) {
+            prepareBox();
+        }
+        startButton.classList.add("hidden");
+        nextButton.classList.remove("hidden");
+        boxes = document.querySelectorAll(".box");
+    }
 
     var show = function() {
 
@@ -52,8 +76,11 @@
                 }
             }
         }
+
+        nextButton.classList.add("hidden");
     }
 
-    startButton.addEventListener("click", show);
+    startButton.addEventListener("click", prepareStructure);
+    nextButton.addEventListener("click", show);
 
 })();
