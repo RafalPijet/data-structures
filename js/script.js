@@ -33,54 +33,40 @@
         },
     ];
 
-    var boxes;
     var startButton = document.getElementById("start");
-    var nextButton = document.getElementById("next");
 
-    var prepareBox = function() {
+    var prepareBox = function(iterate) {
         var placeToInsert = document.querySelector(".results");
         var element = document.createElement("div");
-        var header = document.createElement("header");
-        var paragraph = document.createElement("p");
-        header.innerText = "Empty";
-        paragraph.innerText = "No data";
-        element.appendChild(header);
-        element.appendChild(paragraph);
+        element.appendChild(document.createElement("header"));
+        element.appendChild(document.createElement("p"));
         element.classList.add("box");
         placeToInsert.appendChild(element);
+        element.setAttribute("id", data[iterate].id);
     }
 
-    var prepareStructure = function() {
+    var runTask = function() {
         var counter = Object.keys(data).length;
+        var box;
+
         for (var i = 0; i < counter; i++) {
-            prepareBox();
-        }
-        startButton.classList.add("hidden");
-        nextButton.classList.remove("hidden");
-        boxes = document.querySelectorAll(".box");
-    }
-
-    var show = function() {
-
-        for (var i = 0; i < data.length; i++) {
-            boxes[i].id = data[i].id;
-            boxes[i].querySelector("header").innerHTML = data[i].title + " (id=" + boxes[i].id + ")";
-            boxes[i].querySelector("p").innerHTML = data[i].content;
+            prepareBox(i);
+            box = document.getElementById(data[i].id);
+            box.querySelector("header").innerHTML = data[i].title + " (id=" + box.id + ")";
+            box.querySelector("p").innerHTML = data[i].content;
 
             for (var j = 0; j < data[i].categories.length; j++) {
 
                 if (data[i].categories[j] != "special-header") {
-                    boxes[i].classList.add(data[i].categories[j]);
+                    box.classList.add(data[i].categories[j]);
                 } else {
-                    boxes[i].querySelector("header").classList.add(data[i].categories[j]);
+                    box.querySelector("header").classList.add(data[i].categories[j]);
                 }
             }
+
         }
-
-        nextButton.classList.add("hidden");
+        startButton.classList.add("hidden");
     }
-
-    startButton.addEventListener("click", prepareStructure);
-    nextButton.addEventListener("click", show);
+    startButton.addEventListener("click", runTask);
 
 })();
