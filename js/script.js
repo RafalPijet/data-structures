@@ -35,38 +35,29 @@
 
     var startButton = document.getElementById("start");
 
-    var prepareBox = function(iterate) {
-        var placeToInsert = document.querySelector(".results");
+    function prepareBox(dataForBox) {
         var element = document.createElement("div");
-        element.appendChild(document.createElement("header"));
-        element.appendChild(document.createElement("p"));
+        var header = document.createElement("header");
+        element.setAttribute("id", dataForBox.id);
         element.classList.add("box");
-        placeToInsert.appendChild(element);
-        element.setAttribute("id", data[iterate].id);
-    }
+        header.innerHTML = dataForBox.title + " (id=" + dataForBox.id + ")";
 
-    var runTask = function() {
-        var counter = Object.keys(data).length;
-        var box;
+        for (var i = 0; i < dataForBox.categories.length; i++) {
 
-        for (var i = 0; i < counter; i++) {
-            prepareBox(i);
-            box = document.getElementById(data[i].id);
-            box.querySelector("header").innerHTML = data[i].title + " (id=" + box.id + ")";
-            box.querySelector("p").innerHTML = data[i].content;
-
-            for (var j = 0; j < data[i].categories.length; j++) {
-
-                if (data[i].categories[j] != "special-header") {
-                    box.classList.add(data[i].categories[j]);
-                } else {
-                    box.querySelector("header").classList.add(data[i].categories[j]);
-                }
+            if (dataForBox.categories[i] != "special-header") {
+                element.classList.add(dataForBox.categories[i]);
+            } else {
+                header.classList.add(dataForBox.categories[i]);
             }
-
         }
-        startButton.classList.add("hidden");
+        element.appendChild(header);
+        element.innerHTML += dataForBox.content;
+        document.querySelector(".results").appendChild(element);
     }
-    startButton.addEventListener("click", runTask);
 
+    startButton.addEventListener("click", function () {
+        for (var i = 0; i < data.length; i++) {
+            prepareBox(data[i]);
+        }
+    });
 })();
