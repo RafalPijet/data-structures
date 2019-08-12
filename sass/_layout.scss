@@ -8,7 +8,7 @@ body {
   background-color: $grey;
 }
 
-button {
+.buttonTask {
   width: 150px;
   height: 50px;
   border-radius: 5px;
@@ -50,6 +50,10 @@ button {
 
 .hidden {
   visibility: hidden;
+}
+
+.hide {
+  display: none;
 }
 
 /*

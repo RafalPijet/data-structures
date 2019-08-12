@@ -24,9 +24,9 @@
     "build-prod:copy-dirs": "cp -r images docs && cp -r js docs && cp -r fonts docs",
     "build-prod:test-html": "nu-html-checker docs/*.html",
     "watch": "npm-run-all build -p watch:*",
-    "watch:sassprefixer": "npm-run-all -p watch-sass watch-autoprefixer",
-    "watch-sass": "onchange sass/style.scss -- node-sass --output-style expanded --source-map true -o css sass",
-    "watch-autoprefixer": "onchange css/style.css -- autoprefixer-cli -o css/style.css css/style.css",
+    "watch:sassprefixer": "npm-run-all -p watch:sass watch:autoprefixer",
+    "watch:sass": "onchange sass/style.scss -- node-sass --output-style expanded --source-map true -o css sass",
+    "watch:autoprefixer": "onchange css/style.css -- autoprefixer-cli -o css/style.css css/style.css",
     "watch:browsersync": "browser-sync start --server --files sass/*.scss *.html"
   },
   "keywords": [],

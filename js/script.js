@@ -35,6 +35,7 @@
 
     var startButton = document.getElementById("start");
     var addButton = document.getElementById("add");
+    const showButton = document.getElementById("show-all");
 
     function prepareBox(dataForBox) {
         var element = document.createElement("div");
@@ -45,7 +46,7 @@
 
         for (var i = 0; i < dataForBox.categories.length; i++) {
 
-            if (dataForBox.categories[i] != "special-header") {
+            if (dataForBox.categories[i] !== "special-header") {
                 element.classList.add(dataForBox.categories[i]);
             } else {
                 header.classList.add(dataForBox.categories[i]);
@@ -83,4 +84,22 @@
         let content = window.prompt("Wprowadź treść");
         addContent(content);
     });
+
+    const hideBox = function () {
+        this.parentElement.parentElement.classList.add("hide");
+    };
+
+    let boxes = document.querySelectorAll(".btn-close");
+
+    for (let i = 0; i < boxes.length; i++) {
+        boxes[i].addEventListener("click", hideBox);
+    }
+
+    showButton.addEventListener("click", function () {
+
+        for (let i = 0; i < boxes.length; i++) {
+            boxes[i].parentElement.parentElement.classList.remove("hide");
+        }
+    })
+
 })();

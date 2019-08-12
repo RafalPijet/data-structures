@@ -6,11 +6,27 @@
     <meta name="author" content="Rafał Pijet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Data structures</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
-    <button id="start">Run Task 13.1</button>
-    <button id="add">Add content</button>
+    <button class="buttonTask" id="start">Run Task 13.1</button>
+    <button class="buttonTask" id="add">Add content</button>
+    <button class="buttonTask" id="show-all">Show all</button>
+    <div id="page-wrapper" class="container">
+        <div class="box" id="box1">
+            <header>First<button class="btn btn-close">X</button></header>
+            <p>Lorem ipsum</p>
+        </div>
+        <div class="box" id="box2">
+            <header>Second<button class="btn btn-close">X</button></header>
+            <p>Dolor sit amet.</p>
+        </div>
+        <div class="box" id="box3">
+            <header>Third<button class="btn btn-close">X</button></header>
+            <p>Lorem ipsum</p>
+        </div>
+    </div>
     <div class="results"></div>
 <script src="js/script.js"></script>
 </body>
