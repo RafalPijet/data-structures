@@ -34,6 +34,7 @@
     ];
 
     var startButton = document.getElementById("start");
+    var addButton = document.getElementById("add");
 
     function prepareBox(dataForBox) {
         var element = document.createElement("div");
@@ -55,9 +56,31 @@
         document.querySelector(".results").appendChild(element);
     }
 
+    function addContent(content) {
+        let headers = document.getElementsByTagName("header");
+
+        if (headers.length !== 0) {
+
+            for (let i = 0; i < headers.length; i++) {
+                headers[i].insertAdjacentHTML("beforeEnd", "<br>" + content + " (" + i + ")");
+                let element = document.createElement("h4");
+                element.setAttribute("id", content + i);
+                element.innerText = content;
+                headers[i].parentElement.appendChild(element);
+            }
+        } else {
+            window.alert("Brak struktur!!!");
+        }
+    }
+
     startButton.addEventListener("click", function () {
         for (var i = 0; i < data.length; i++) {
             prepareBox(data[i]);
         }
+    });
+
+    addButton.addEventListener("click", function () {
+        let content = window.prompt("Wprowadź treść");
+        addContent(content);
     });
 })();
