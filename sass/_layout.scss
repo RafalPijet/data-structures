@@ -66,7 +66,7 @@ body {
   max-width: 400px;
   margin: 0 auto;
 }
-
+*/
 .overlay {
   display: none;
   position: fixed;
@@ -78,6 +78,14 @@ body {
 
   &.show {
     display: block;
+  }
+}
+
+.overlay-next {
+  @extend .overlay;
+
+  &.show {
+    @extend .show;
   }
 }
 
@@ -116,4 +124,4 @@ body {
     padding: 5px 30px;
   }
 }
-*/
+

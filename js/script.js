@@ -100,6 +100,63 @@
         for (let i = 0; i < boxes.length; i++) {
             boxes[i].parentElement.parentElement.classList.remove("hide");
         }
-    })
+    });
 
+    let modal = document.querySelector(".modal");
+
+    const showModal = function (event) {
+        event.preventDefault();
+        modal.classList.add("show");
+        modal.parentElement.classList.add("show");
+        modal.children[1].innerHTML = "Modal header";
+    };
+
+    const hideModal = function (event) {
+        event.preventDefault();
+
+        modal.classList.remove("show");
+        modal.parentElement.classList.remove("show");
+    };
+
+    const showModalButtons = document.querySelectorAll(".show-modal");
+    const closeButtons = document.querySelectorAll(".close");
+
+    for (let i = 0; i < showModalButtons.length; i++) {
+        showModalButtons[i].addEventListener("click", showModal);
+    }
+
+    for (let i = 0; i < closeButtons.length; i++) {
+        closeButtons[i].addEventListener("click", hideModal);
+    }
+
+    document.getElementById("modal-overlay").addEventListener("click", hideModal);
+
+    const openModal = function (isOpen, modal) {
+
+        if (isOpen) {
+            document.getElementById("modal-overlay-next").classList.add("show");
+            document.getElementById(modal).classList.add("show");
+        } else {
+            document.querySelector(".overlay-next").classList.remove("show");
+            document.querySelectorAll(".modal").forEach(function (modal) {
+                modal.classList.remove("show");
+            });
+        }
+    };
+
+    document.getElementById("1").addEventListener("click", function () {
+        openModal(true, "modal-one");
+    });
+    document.getElementById("2").addEventListener("click", function () {
+        openModal(true,"modal-two");
+    });
+    document.getElementById("3").addEventListener("click", function () {
+        openModal(true,"modal-three");
+    });
+
+    document.querySelectorAll(".close-modal").forEach(function (button) {
+        button.addEventListener("click", function () {
+            openModal(false);
+        })
+    });
 })();

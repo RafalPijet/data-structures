@@ -10,24 +10,71 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
-    <button class="buttonTask" id="start">Run Task 13.1</button>
-    <button class="buttonTask" id="add">Add content</button>
-    <button class="buttonTask" id="show-all">Show all</button>
-    <div id="page-wrapper" class="container">
-        <div class="box" id="box1">
-            <header>First<button class="btn btn-close">X</button></header>
-            <p>Lorem ipsum</p>
-        </div>
-        <div class="box" id="box2">
-            <header>Second<button class="btn btn-close">X</button></header>
-            <p>Dolor sit amet.</p>
-        </div>
-        <div class="box" id="box3">
-            <header>Third<button class="btn btn-close">X</button></header>
-            <p>Lorem ipsum</p>
+<button class="buttonTask" id="start">Run Task 13.1</button>
+<button class="buttonTask" id="add">Add content</button>
+<button class="buttonTask" id="show-all">Show all</button>
+<a href="#" class="buttonTask show-modal">Show modal</a>
+<div id="page-wrapper" class="container">
+    <div class="box" id="box1">
+        <header>First
+            <button class="btn btn-close">X</button>
+        </header>
+        <p>Lorem ipsum</p>
+    </div>
+    <div class="box" id="box2">
+        <header>Second
+            <button class="btn btn-close">X</button>
+        </header>
+        <p>Dolor sit amet.</p>
+    </div>
+    <div class="box" id="box3">
+        <header>Third
+            <button class="btn btn-close">X</button>
+        </header>
+        <p>Lorem ipsum</p>
+    </div>
+</div>
+<div class="results"></div>
+<div class="overlay" id="modal-overlay">
+    <div class="modal">
+        <a href="#" class="close">x</a>
+        <header>Lorem ipsum</header>
+        <div class="content">
+            <p>Dolor sit amet!</p>
         </div>
     </div>
-    <div class="results"></div>
+</div>
+<div class="overlay-next" id="modal-overlay-next">
+    <div class="modal" id="modal-one">
+        <a href="#" class="close-modal">x</a>
+        <header>Modal one</header>
+        <div class="content">
+            <p>Dolor sit amet!</p>
+        </div>
+    </div>
+    <div class="modal" id="modal-two">
+        <a href="#" class="close-modal">x</a>
+        <header>Modal two</header>
+        <div class="content">
+            <p>Dolor sit amet!</p>
+        </div>
+    </div>
+    <div class="modal" id="modal-three">
+        <a href="#" class="close-modal">x</a>
+        <header>Modal three</header>
+        <div class="content">
+            <p>Dolor sit amet!</p>
+        </div>
+    </div>
+</div>
+<a href="#" class="buttonTask show-modal">Show modal</a>
+<a href="#" class="buttonTask show-modal">Show modal</a>
+<a href="#" class="buttonTask show-modal">Show modal</a>
+<div>
+    <a href="#" class="buttonTask" id="1">Show first modal</a>
+    <a href="#" class="buttonTask" id="2">Show second modal</a>
+    <a href="#" class="buttonTask" id="3">Show third modal</a>
+</div>
 <script src="js/script.js"></script>
 </body>
 </html>
