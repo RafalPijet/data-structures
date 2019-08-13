@@ -56,6 +56,34 @@ body {
   display: none;
 }
 
+.accordion {
+  border: 1px solid #bbb;
+
+  h3 {
+    background-color: #ddd;
+    margin: 0;
+    padding: 5px;
+    border: 1px solid #bbb;
+    border-bottom: none;
+    cursor: pointer;
+
+    + div {
+      height: 0;
+      overflow: hidden;
+      border: 1px solid #bbb;
+      border-bottom: none;
+      transition: height 0.5s;
+    }
+
+    &.active {
+      + div {
+        height: 70px;
+        overflow: auto;
+      }
+    }
+  }
+}
+
 /*
 body {
   padding: 10px;

@@ -159,4 +159,20 @@
             openModal(false);
         })
     });
+
+    const items = document.querySelectorAll("#accordion h3");
+    const handlingItems = function () {
+        this.classList.add("active");
+
+        for (let i = 0; i < items.length; i++) {
+
+            if (items[i].classList.contains("active") && items[i] !== this) {
+                items[i].classList.remove("active");
+            }
+        }
+    };
+
+    for (let i = 0; i < items.length; i++) {
+        items[i].addEventListener("click", handlingItems)
+    }
 })();
