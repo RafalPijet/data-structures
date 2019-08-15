@@ -1,150 +1,47 @@
 /* Colors */
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
-body {
-  padding: 10px;
-  text-align: center;
-  background-color: #747d8c;
-}
+body { padding: 10px; text-align: center; background-color: #747d8c; }
 
-.buttonTask {
-  width: 150px;
-  height: 50px;
-  border-radius: 5px;
-  cursor: pointer;
-  background-color: #ffa502;
-  font-size: 16px;
-  font-weight: bold;
-  outline: none;
-}
+.buttonTask { width: 150px; height: 50px; border-radius: 5px; cursor: pointer; background-color: #ffa502; font-size: 16px; font-weight: bold; outline: none; }
 
-.box {
-  display: inline-block;
-  margin: 10px;
-  width: 200px;
-  border: 1px solid #000;
-  min-height: 100px;
-  text-align: center;
-  vertical-align: top;
-  opacity: 0.7;
-  background-color: #fff;
-}
+.box { display: inline-block; margin: 10px; width: 200px; border: 1px solid #000; min-height: 100px; text-align: center; vertical-align: top; opacity: 0.7; background-color: #fff; }
 
-.box header {
-  display: block;
-  border-bottom: 1px solid #000;
-}
+.box header { display: block; border-bottom: 1px solid #000; }
 
-.highlighted {
-  background-color: #70a1ff;
-}
+.highlighted { background-color: #70a1ff; }
 
-.special-header {
-  background-color: #04ae00;
-}
+.special-header { background-color: #04ae00; }
 
-.important {
-  opacity: 1;
-}
+.important { opacity: 1; }
 
-.hidden {
-  visibility: hidden;
-}
+.hidden { visibility: hidden; }
 
-.hide {
-  display: none;
-}
+.hide { display: none; }
 
-.accordion {
-  border: 1px solid #bbb;
-}
+.accordion { border: 1px solid #bbb; }
 
-.accordion h3 {
-  background-color: #ddd;
-  margin: 0;
-  padding: 5px;
-  border: 1px solid #bbb;
-  border-bottom: none;
-  cursor: pointer;
-}
+.accordion h3 { background-color: #ddd; margin: 0; padding: 5px; border: 1px solid #bbb; border-bottom: none; cursor: pointer; }
 
-.accordion h3 + div {
-  height: 0;
-  overflow: hidden;
-  border: 1px solid #bbb;
-  border-bottom: none;
-  transition: height 0.5s;
-}
+.accordion h3 + div { height: 0; overflow: hidden; border: 1px solid #bbb; border-bottom: none; transition: height 0.5s; }
 
-.accordion h3.active + div {
-  height: 70px;
-  overflow: auto;
-}
+.accordion h3.active + div { height: 70px; overflow: auto; }
 
-/*
-body {
-  padding: 10px;
-  text-align: center;
-}
+/* body { padding: 10px; text-align: center; } .container { max-width: 400px; margin: 0 auto; } */
+.overlay, .overlay-next { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.7); }
 
-.container {
-  max-width: 400px;
-  margin: 0 auto;
-}
-*/
-.overlay, .overlay-next {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.7);
-}
+.overlay.show, .overlay-next.show { display: block; }
 
-.overlay.show, .overlay-next.show {
-  display: block;
-}
+.modal { display: none; background: #fff; width: 200px; position: absolute; top: 50%; left: 50%; transform: translate3d(-50%, -50%, 0); }
 
-.modal {
-  display: none;
-  background: #fff;
-  width: 200px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate3d(-50%, -50%, 0);
-}
+.modal.show { display: block; }
 
-.modal.show {
-  display: block;
-}
+.modal .close { position: absolute; right: 0; top: 0; padding: 5px; color: #000; text-decoration: none; }
 
-.modal .close {
-  position: absolute;
-  right: 0;
-  top: 0;
-  padding: 5px;
-  color: #000;
-  text-decoration: none;
-}
+.modal header { font-size: 20px; line-height: 30px; min-height: 30px; font-weight: bold; padding: 0 30px; }
 
-.modal header {
-  font-size: 20px;
-  line-height: 30px;
-  min-height: 30px;
-  font-weight: bold;
-  padding: 0 30px;
-}
-
-.modal .content {
-  min-height: 30px;
-  padding: 5px 30px;
-}
+.modal .content { min-height: 30px; padding: 5px 30px; }
 
 /* Components */
 /* Sections */
 /* Pages / Views */
-/*# sourceMappingURL=style.css.map */
